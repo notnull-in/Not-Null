@@ -51,7 +51,7 @@ const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 const headerActive = function () {
-  if (window.scrollY > 80) {
+  if (window.scrollY > 30) {
     header.classList.add("active");
     backTopBtn.classList.add("active");
   } else {
@@ -61,3 +61,9 @@ const headerActive = function () {
 }
 
 addEventOnElem(window, "scroll", headerActive);
+
+// Footer current year
+const currentYear = document.querySelector("#copyright-year");
+currentYear.innerText = new Date().getFullYear();
+currentYear.style.display="inline";
+ 
