@@ -124,6 +124,9 @@ button {
   font: inherit;
 }
 
+textarea { 
+  font: inherit;
+}
 input { width: 100%; }
 
 button { cursor: pointer; }
@@ -325,7 +328,7 @@ body {
   #HEADER
 \*-----------------------------------*/
 
-.header .btn { display: none; }
+/* .header .btn { display: none; } */
 
 .header {
   position: fixed;
@@ -1521,4 +1524,63 @@ body {
 
   .blog-card .card-title { --fs-4: 2.4rem; }
 
+}
+/* Contact dialog */
+
+dialog::backdrop{
+  background-color: rgba(0,0,0,0.5);
+  /* filter:blur(50px); */
+}
+dialog{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  position: relative;
+  border: none;
+  border-radius: 5px;
+}
+dialog .close-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition-1);
+  background-color: var( --sky-blue-crayola);
+  padding: 10px;
+  border-radius: 50%;
+}
+ 
+dialog .close-btn img{
+  width: 20px;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-1);
+  width: 100%;
+}
+
+form input,form textarea{
+  border-radius: 3px;  
+  border: 1px solid var(--majorelle-blue);
+  padding: 8px 20px;
+  font-size: 18px;
+  outline: none;
+  transition: var(--transition-1);
+}
+form input:focus,form textarea:focus{
+  border-color: var(--raisin-black-1);
+}
+
+form textarea{
+  height: 100px;
+  resize: none;
 }
