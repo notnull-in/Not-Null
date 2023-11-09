@@ -1,6 +1,4 @@
-'use strict';
-
-
+"use strict";
 
 /**
  * add Event on elements
@@ -14,9 +12,7 @@ const addEventOnElem = function (elem, type, callback) {
   } else {
     elem.addEventListener(type, callback);
   }
-}
-
-
+};
 
 /**
  * navbar toggle
@@ -30,18 +26,16 @@ const overlay = document.querySelector("[data-overlay]");
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
-}
+};
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
 const closeNavbar = function () {
   navbar.classList.remove("active");
   overlay.classList.remove("active");
-}
+};
 
 addEventOnElem(navbarLinks, "click", closeNavbar);
-
-
 
 /**
  * header & back top btn show when scroll down to 100px
@@ -58,12 +52,25 @@ const headerActive = function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-}
+};
 
 addEventOnElem(window, "scroll", headerActive);
 
 // Footer current year
 const currentYear = document.querySelector("#copyright-year");
 currentYear.innerText = new Date().getFullYear();
-currentYear.style.display="inline";
- 
+currentYear.style.display = "inline";
+
+// Contact form
+
+const dialogBtn = document.querySelector(".contact-dialog");
+const modal = document.querySelector("dialog");
+const closeBtn = document.querySelector(".close-btn");
+dialogBtn.addEventListener("click", function () {
+  modal.showModal();
+});
+
+closeBtn.addEventListener("click", function () {
+  modal.close();
+});
+;
